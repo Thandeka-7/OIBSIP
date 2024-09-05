@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color:#FFB6C1;
+    color: #000000;
+}
+
+header {
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    
+}
+
+nav ul li a:hover{
+    color: red;
+}
+.buttons{
+    text-align: left;
+    display: inline;
+}
+.image{
+    width: 200px;
+    height: 200px;
+    
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.intro h1 {
+    font-size: 36px;
+    color: #E1583E;
+}
+
+.intro h2 {
+    font-size: 24px;
+    color: #A6A09A;
+}
+
+.intro p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.highlight {
+    color: #E1583E;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons button {
+    background-color: #E1583E;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.image {
+    width: 300px; /* Adjust width as needed */
+    height: 300px; /* Adjust height as needed */
+    border-radius: 50%;
+    object-fit: cover;
+}
+.intro{
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: -20px;
+}
+
+#contact {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px solid #ddd;
+    color: black;
+}
+
+#contact p {
+    margin: 0.5rem 0;
+    font-size:large;
+}
+
+#contact a[href^="mailto"] {
+    color: black;
+    text-decoration: none;
+}
+
+#contact a[href^="mailto"]:hover {
+    color: red;
+}
+
+#contact a {
+    color: black; 
+    text-decoration: none;
+}
+
+#contact a:hover {
+    color: red; 
+}
