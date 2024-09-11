@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            text-align: center;
+            font-size: larger;
+            background-image: url(/images/wall1.jpg);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        #form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+        }
+        
+        .btnConvert, .btnClear {
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1em;
+            margin: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        
+        .btnConvert {
+            background-color: #00bcd4; 
+            color: white;
+        }
+        
+        .btnClear {
+            background-color: #8bc34a; 
+            color: white;
+        }
+        
+        .btnConvert:hover, .btnClear:hover {
+            background-color: #0097a7;
+        }
+        
+        .btnConvert:active, .btnClear:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <form id="form" onsubmit="return convertTemperature()">
+        <h1>Temperature Converter</h1>
+        <label for="numInput">Enter the temperature:</label><br>
+        <input type="number" class="numInput" id="numInput" required placeholder="Degrees"><br>
+        
+        <label for="type">Convert to:</label><br>
+        <select id="type" name="options" required>
+            <option value="Type">Type</option>
+            <option value="Fahrenheit">Fahrenheit</option>
+            <option value="Celsius">Celsius</option>
+            <option value="Kelvin">Kelvin</option>
+        </select><br>
+
+        <label for="Results">Results:</label><br>
+        <input type="text" class="Results" id="Results" readonly><br>
+
+        <button type="submit" class="btnConvert">Convert</button>
+        <button type="button" class="btnClear" onclick="clearFields()">Clear</button><br>
+    </form>
+
+    <script>
+        function convertTemperature() {
+            const inputTemp = parseFloat(document.getElementById("numInput").value);
+            const outputUnit = document.getElementById("type").value;
+            let result;
+
+            if (outputUnit === "Celsius") {
+                result = inputTemp; 
+            } else if (outputUnit === "Fahrenheit") {
+                result = inputTemp * 9 / 5 + 32;
+            } else if (outputUnit === "Kelvin") {
+                result = inputTemp + 273.15;
+            }
+
+            document.getElementById("Results").value = `${result.toFixed(2)} ${outputUnit}`;
+            return false; 
+        }
+
+        function clearFields() {
+            document.getElementById("numInput").value = '';
+            document.getElementById("Results").value = '';
+            document.getElementById("type").selectedIndex = 0;
+        }
+    </script>
+</body>
+</html>
